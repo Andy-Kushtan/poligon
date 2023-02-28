@@ -220,13 +220,19 @@ body {
   .send-message__input:focus::placeholder, .send-message__input:active::placeholder {
     color: transparent; }
   .send-message__emogi {
-    font-size: 2.5rem; }
+    width: 3.2rem;
+    height: 3.2rem;
+    margin-left: 3rem; }
   .send-message__button {
     background: #e15d51;
     border-radius: 3px;
     border: 1px transparent;
-    width: 2.5rem;
-    height: 2.5rem; }
+    width: 3.2rem;
+    height: 3.2rem; }
+    .send-message__button__send {
+      padding: 0.4rem 0 0 0.2rem;
+      width: 2.2rem;
+      height: 2.2rem; }
 
 .chat-rules {
   margin-top: 1rem;
@@ -392,6 +398,10 @@ body {
       width: 50%;
       height: 100%;
       font-size: 3rem; }
+      .main-roullet__win-numbers__jackpot__cup {
+        margin-right: 1rem;
+        width: 4rem;
+        height: 4rem; }
   .main-roullet__balance {
     display: flex;
     align-items: center; }

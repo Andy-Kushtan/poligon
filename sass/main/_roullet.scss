@@ -169,6 +169,12 @@ $color-tertiary: #e15d51;
       width: 50%;
       height: 100%;
       font-size: 3rem;
+
+      &__cup {
+        margin-right: 1rem;
+        width: 4rem;
+        height: 4rem;
+      }
     }
   }
 
