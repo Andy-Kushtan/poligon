@@ -1,0 +1,301 @@
+$color-tertiary: #e15d51;
+
+.display-interface {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem 0rem 0rem;
+  margin-top: 2rem;
+  background-color: $color-black;
+  border-radius: 1rem;
+
+  &__varaity-bet {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__all-bet {
+    background-color: $color-black-three;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 32%;
+    padding: 1rem;
+    border-radius: 1rem;
+
+    background: linear-gradient(112.49deg, #523839 2.09%, #2f2f34 59.15%);
+
+    &__coulor {
+      color: $color-white;
+      background-color: rgba($color-tertiary, $alpha: 0.8);
+      border-radius: 1rem;
+      border: none;
+      height: 4rem;
+
+      padding: 1rem;
+      font-family: "Josefin Sans";
+      cursor: pointer;
+    }
+
+    &__coulor:hover {
+      background-color: $color-tertiary;
+    }
+
+    &__coulor-black {
+      background-color: rgba($color-black, $alpha: 0.5);
+      color: $color-white;
+      border-radius: 1rem;
+      border: none;
+      height: 4rem;
+      padding: 1rem;
+      font-family: "Josefin Sans";
+      cursor: pointer;
+    }
+
+    &__coulor-black:hover {
+      background-color: $color-black;
+    }
+  }
+  &__all-bet-black {
+    background-color: $color-black-three;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 32%;
+    padding: 1rem;
+    border-radius: 1rem;
+
+    background: linear-gradient(112.49deg, #373737 2.09%, #2f2f34 59.15%);
+  }
+
+  &__all-bets {
+    &__numbers-red {
+      color: $color-white;
+      background-color: rgba($color-tertiary, $alpha: 0.2);
+      border-radius: 0.5rem;
+      //   border: none;
+      border: 1px solid $color-tertiary;
+      height: 3.5rem;
+      width: 2.2rem;
+      cursor: pointer;
+    }
+
+    &__numbers-black {
+      color: $color-white;
+      background-color: rgba($color-black-three, $alpha: 0.2);
+      border-radius: 0.5rem;
+      //   border: none;
+      border: 1px solid $color-gray;
+      height: 3.5rem;
+      width: 2.2rem;
+      cursor: pointer;
+    }
+
+    &__numbers-red:hover {
+      background-color: rgba($color-tertiary, $alpha: 1);
+    }
+    &__numbers-black:hover {
+      background-color: rgba($color: #000000, $alpha: 1);
+    }
+  }
+
+  &__zero-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    width: 32%;
+    border-radius: 1rem;
+    border: none;
+
+    background: linear-gradient(105.65deg, #38523e -1.26%, #2f2f34 56.01%);
+
+    &__zero {
+      background-color: rgba(#5eb76e, $alpha: 0.9);
+      padding: 1.5rem 3.5rem 1.5rem 3.5rem;
+      width: 28rem;
+      //   width: 30%;
+
+      border-radius: 1rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    &__zero:hover {
+      background-color: #5eb76e;
+    }
+  }
+}
+
+.counter {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 0.5rem;
+
+  &__red {
+    color: $color-gray;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-black-three;
+    border-radius: 1rem;
+    width: 32%;
+    height: 3rem;
+  }
+  &__zero {
+    color: $color-gray;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-black-three;
+    border-radius: 1rem;
+    width: 32%;
+    height: 3rem;
+  }
+  &__black {
+    color: $color-gray;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-black-three;
+    border-radius: 1rem;
+    width: 32%;
+    height: 3rem;
+  }
+}
+
+.display-players {
+  display: flex;
+  justify-content: space-between;
+  // flex: 1;
+  width: 100%;
+  margin-top: 0.5rem;
+
+  &__players {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 55%;
+    margin-bottom: 0.5rem;
+
+    &__img {
+      width: 3rem;
+      height: 3rem;
+      margin-right: 0.3rem;
+    }
+
+    &__number {
+      font-size: 2rem;
+    }
+  }
+
+  &__totalbet {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+
+    &__text {
+      font-size: 1.6rem;
+      opacity: 0.5;
+      margin-right: 0.3rem;
+    }
+    &__amount {
+      font-size: 1.8rem;
+      color: $color-white;
+    }
+  }
+
+  &__red {
+    color: $color-gray;
+    font-size: 1.4rem;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    background-color: $color-black-three;
+    border-radius: 1rem;
+    width: 32%;
+    // height: 3.5rem;
+    padding: 1rem;
+  }
+  &__zero {
+    color: $color-gray;
+    font-size: 1.4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    background-color: $color-black-three;
+    border-radius: 1rem;
+    width: 32%;
+    padding: 1rem;
+  }
+  &__black {
+    color: $color-gray;
+    font-size: 1.4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    background-color: $color-black-three;
+    border-radius: 1rem;
+    width: 32%;
+    padding: 1rem;
+  }
+}
+
+.active-players {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  &__avatar {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+  }
+  &__nick {
+    font-size: 1.5rem;
+    color: $color-white;
+  }
+
+  &__betamount {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    &__amount {
+      font-size: 1.4rem;
+      color: $color-tertiary;
+      margin-right: 1rem;
+    }
+    &__color-red {
+      width: 1.5rem;
+      height: 2rem;
+      background-color: $color-tertiary;
+      border-radius: 3px;
+      margin-right: 1rem;
+    }
+
+    &__color-green {
+      width: 1.5rem;
+      height: 2rem;
+      background-color: #5eb76e;
+      border-radius: 3px;
+      margin-right: 1rem;
+    }
+
+    &__color-black {
+      width: 1.5rem;
+      height: 2rem;
+      background-color: $color-black;
+      border-radius: 3px;
+      margin-right: 1rem;
+    }
+  }
+}

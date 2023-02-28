@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  // font-family: "Poppins", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
+  color: $color-white;
+  background-color: $color-black;
+  height: 100vh;
+}
+
+.maingrid {
+  display: grid;
+  grid-template-columns: 0.52fr 1fr;
+  grid-template-rows: 7rem 1fr;
+  grid-gap: 1.8rem;
+  height: 100vh;
+}
+
+.background {
+  background-color: #161640;
+}
+
+.background2 {
+  background-color: #3c3c48;
+}
