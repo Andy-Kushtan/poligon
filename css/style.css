@@ -123,11 +123,8 @@ body {
   display: grid;
   grid-template-columns: 0.52fr 1fr;
   grid-template-rows: 7rem 1fr;
-  grid-gap: 1.8rem;
+  grid-gap: 1rem;
   height: 100vh; }
-
-.background {
-  background-color: #161640; }
 
 .background2 {
   background-color: #3c3c48; }
@@ -135,7 +132,8 @@ body {
 .sidebar {
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  padding-left: 1rem; }
   .sidebar__games {
     display: flex;
     justify-content: space-around;
@@ -616,7 +614,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-right: 1rem;
     margin-bottom: 0.5rem; }
     .display-players__totalbet__text {
       font-size: 1.6rem;
@@ -628,9 +625,9 @@ body {
   .display-players__red {
     color: #a4a4b2;
     font-size: 1.4rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     background-color: #2a2a30;
     border-radius: 1rem;
     width: 32%;
@@ -638,9 +635,9 @@ body {
   .display-players__zero {
     color: #a4a4b2;
     font-size: 1.4rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     background-color: #2a2a30;
     border-radius: 1rem;
     width: 32%;
@@ -648,13 +645,26 @@ body {
   .display-players__black {
     color: #a4a4b2;
     font-size: 1.4rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     background-color: #2a2a30;
     border-radius: 1rem;
     width: 32%;
     padding: 1rem; }
+
+.display-players__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  border-bottom: 1px solid rgba(164, 164, 178, 0.3); }
+
+.active-players__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%; }
 
 .active-players {
   margin-top: 1rem;
