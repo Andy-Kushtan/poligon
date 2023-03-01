@@ -557,6 +557,16 @@ body {
       .main-roullet__balance__buttons__el-max:hover {
         border: 2px solid #e15d51; }
 
+.spin {
+  animation-name: spin;
+  animation-duration: 2s; }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
 .display-interface {
   display: flex;
   flex-direction: column;

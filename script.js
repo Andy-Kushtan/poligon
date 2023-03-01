@@ -7,8 +7,27 @@ const btnCloseOk = document.querySelector(".btn__close-ok");
 const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
 const labelTimer = document.querySelector(".main-roullet__taimer__counter");
 const labelTaimerText = document.querySelector(".main-roullet__taimer__text");
+const balanceReload = document.querySelector(
+  ".main-roullet__balance__balance__reload"
+);
+const spin = document.querySelector(".spin");
 const labelProgresBar = document.querySelector(
   ".main-roullet__taimer__progres-bar"
+);
+const inputBetAmount = document.querySelector(
+  ".main-roullet__balance__bet__input"
+);
+const btnClear = document.querySelector(
+  ".main-roullet__balance__buttons__el-clear"
+);
+const btn10 = document.querySelector(".btn10");
+const btn100 = document.querySelector(".btn100");
+const btn1000 = document.querySelector(".btn1000");
+const btn12 = document.querySelector(".btn12");
+const btnX2 = document.querySelector(".btnx2");
+const btnMAX = document.querySelector(".btnmax");
+const balance = document.querySelector(
+  ".main-roullet__balance__balance__amount"
 );
 
 const openModal = function (e) {
@@ -70,3 +89,36 @@ const startLogOutTimer = function () {
 // when i will add spinning roullet => need to add startLogOutTimer(); when the spin is over;
 
 // background pisition
+
+//bets buttons for increasing and decreasing bet
+btnClear.addEventListener("click", function () {
+  inputBetAmount.value = 0;
+});
+
+btn10.addEventListener("click", function () {
+  inputBetAmount.value = +inputBetAmount.value + 10;
+});
+
+btn100.addEventListener("click", function () {
+  inputBetAmount.value = +inputBetAmount.value + 100;
+});
+
+btn1000.addEventListener("click", function () {
+  inputBetAmount.value = +inputBetAmount.value + 1000;
+});
+
+btn12.addEventListener("click", function () {
+  inputBetAmount.value = +inputBetAmount.value / 2;
+});
+
+btnX2.addEventListener("click", function () {
+  inputBetAmount.value = +inputBetAmount.value * 2;
+});
+
+btnMAX.addEventListener("click", function () {
+  inputBetAmount.value = balance.textContent;
+});
+
+balanceReload.addEventListener("click", function () {
+  balanceReload.classList.add("spin");
+});
