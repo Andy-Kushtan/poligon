@@ -19,6 +19,7 @@
 
     <link rel="stylesheet" href="css/style.css" />
     <title>Poligon</title>
+    <script defer src="script.js"></script>
   </head>
   <body class="maingrid">
     <div class="nav background">
@@ -223,7 +224,7 @@
           </div>
 
           <div class="chat-rules">
-            <div class="chat-rules__rules">Chat rules</div>
+            <div class="chat-rules__rules btn--show-modal">Chat rules</div>
             <div class="chat-rules__players">
               <span class="chat-rules__players__dot"></span>
               <span class="chat-rules__players__online">141</span> PLAYERS
@@ -261,12 +262,13 @@
     <div class="roullete-grid">
       <div class="background main-roullet">
         <div class="main-roullet__taimer">
-          <div class="main-roullet__taimer__progres-bar"></div>
+          <div class="main-roullet__taimer__progres-bar opacity"></div>
           <div class="main-roullet__taimer__text">
-            Rolling in <span class="main-roullet__taimer__counter">17</span>
+            Rolling in <span class="main-roullet__taimer__counter">25</span>
           </div>
         </div>
         <div class="main-roullet__roullet">
+          <div class="main-roullet__pointer"></div>
           <div class="main-roullet__roullet__el main-roullet__roullet__el__2">
             1
           </div>
@@ -538,5 +540,29 @@
         
       </div>
     </div>
+
+    <div class="modal hidden">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">
+        CHAT RULES
+      </h2>
+      <p class="modal__header__text">Actions that will result in restricted chat abilities: <br>
+        — Messages not in room language<br>
+        — Spam, including predictions on any of the site's games<br>
+        — Policy discussions<br>
+        — Racism, harmful speech, or attacking any players<br>
+        — Inviting site users to third-party resources<br>
+        — Asking for coins<br>
+        — CAPS LOOK messages<br>
+        — Buying or selling coins, cryptocurrencies, game  <br>
+        — Advertising any external website <br>
+        — Advertising promo codes, including promo codes in username <br>
+        — Sending bonus codes from social networks <br>
+        — Advertising scripts or browser extensions <br>
+        — disclosure of confidential information of players <br> <br>
+        Moderators can block a user without giving a reason. Please do not contact the site support if you have received a chat block. Support does not review the decisions of chat moderators.</p>
+        <button class="btn__close-ok">OK</button>
+    </div>
+    <div class="overlay hidden"></div>
   </body>
 </html>
