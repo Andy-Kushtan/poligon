@@ -374,9 +374,11 @@ body {
   margin-right: 1rem;
   border-radius: 1rem;
   background-color: #222225;
-  position: relative; }
+  position: relative;
+  overflow-x: hidden;
+  height: 35rem; }
   .main-roullet__taimer {
-    width: 100%;
+    width: 62%;
     height: 5rem;
     background-color: black;
     border-radius: 2rem;
@@ -419,8 +421,10 @@ body {
     grid-auto-flow: column;
     align-items: center;
     justify-items: center;
-    overflow: hidden;
-    position: relative; }
+    position: relative;
+    transition-duration: 5s;
+    transition-timing-function: ease-in-out;
+    left: 0; }
     .main-roullet__roullet__el {
       width: 8rem;
       height: 8rem;
@@ -436,11 +440,13 @@ body {
   .main-roullet__win-numbers {
     width: 100%;
     height: 4rem;
-    border-radius: 2rem; }
+    border-radius: 2rem;
+    width: 70%; }
   .main-roullet__balance {
     width: 100%;
     height: 7rem;
-    border-radius: 2rem; }
+    border-radius: 2rem;
+    width: 62%; }
   .main-roullet__win-numbers {
     display: flex;
     color: #dadae1; }

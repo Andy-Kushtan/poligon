@@ -122,3 +122,55 @@ btnMAX.addEventListener("click", function () {
 balanceReload.addEventListener("click", function () {
   balanceReload.classList.add("spin");
 });
+
+//roullete
+// var amountOfBoxes = 100;
+
+// var order = [];
+
+// function init() {
+//   let roulette = document.getElementById("fillMeUpDaddy");
+//   roulette.innerHTML = "";
+//   let tempBets = [
+//     ["player1", "red"],
+//     ["player2", "yellowgreen"],
+//   ];
+//   for (var i = 0; i < amountOfBoxes; i++) {
+//     var randomPlayer = rand(0, tempBets.length);
+//     var node = document.createElement("div");
+//     var h3 = document.createElement("h3");
+//     h3.innerHTML = tempBets[randomPlayer][0];
+//     h3.style.backgroundColor = tempBets[randomPlayer][1];
+//     node.appendChild(h3);
+//     roulette.appendChild(node);
+//   }
+// }
+
+function rand(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function play() {
+  //add sound if you want
+  //var audio = new Audio('spin.mp3');
+  //audio.play();
+  var offset = rand(55, 65 * 140 - 180) + 180;
+  document.getElementById("fillMeUpDaddy").style.left = -(offset - 180) + "px";
+
+  //   let chosenPlayer = document.createElement("div");
+  //   chosenPlayer.style.backgroundColor = bets[order[parseInt(offset / 140)]][1];
+  //   chosenPlayer.innerHTML = bets[order[parseInt(offset / 140)]][0];
+  //   setTimeout(function () {
+  //     // document.getElementById("winners").appendChild(chosenPlayer);
+  //     document.getElementById("fillMeUpDaddy").style.transitionDuration = "0s";
+  //     document.getElementById("fillMeUpDaddy").style.left = "0px";
+  //     setTimeout(function () {
+  //       document.getElementById("fillMeUpDaddy").style.transitionDuration = "5s";
+  //     }, 50);
+  //   }, 5500);
+}
+
+btn10.addEventListener("click", function (e) {
+  //   init();
+  play();
+});

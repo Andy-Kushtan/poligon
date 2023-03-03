@@ -5,6 +5,20 @@ $color-tertiary: #e15d51;
   grid-template-rows: 0.5fr 1fr;
 }
 
+// .main-roullet__roulette > div {
+//   width: 140px;
+//   min-width: 140px;
+//   float: left;
+// }
+
+// .main-roullet__roulette > div > h3 {
+//   height: 80px;
+//   line-height: 80px;
+//   text-align: center;
+//   margin: 0;
+//   font-size: 30px;
+// }
+
 .main-roullet {
   display: grid;
   grid-row-gap: 2rem;
@@ -17,6 +31,9 @@ $color-tertiary: #e15d51;
   border-radius: 1rem;
   background-color: $color-black-secondary;
   position: relative;
+  overflow-x: hidden;
+  // overflow-y: hidden;
+  height: 35rem;
 
   // .main-roullet::before {
   //   content: "1111";
@@ -29,7 +46,8 @@ $color-tertiary: #e15d51;
   // }
 
   &__taimer {
-    width: 100%;
+    // width: 100%;
+    width: 62%;
     height: 5rem;
     background-color: $color-black;
     border-radius: 2rem;
@@ -37,7 +55,7 @@ $color-tertiary: #e15d51;
     // justify-content: center;
     // padding: 1.5rem;
     // margin-bottom: 1rem;
-    // animation: timer ease-in 5s;
+    // animation: timer ease-in 25s;
 
     &__progres-bar {
       animation: timer ease-in 25s;
@@ -47,6 +65,7 @@ $color-tertiary: #e15d51;
       border-radius: 2rem;
       z-index: 1;
       position: absolute;
+      // width: 10%;
     }
 
     &__text {
@@ -89,8 +108,22 @@ $color-tertiary: #e15d51;
     grid-auto-flow: column;
     align-items: center;
     justify-items: center;
-    overflow: hidden;
+
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // flex-wrap: wrap;
+    // overflow-y: hidden;
+    // overflow-x: visible;
+    // overflow: hidden;
+    // overflow-x: hidden;
+    // max-width: 10%;
     position: relative;
+    // position: absolute;
+
+    transition-duration: 5s;
+    transition-timing-function: ease-in-out;
+    left: 0;
     // position: absolute;
     // transform: translateX(-25rem);
     // margin-top: 20rem;
@@ -131,12 +164,15 @@ $color-tertiary: #e15d51;
     height: 4rem;
     // background-color: aqua;
     border-radius: 2rem;
+    width: 70%;
   }
 
   &__balance {
     width: 100%;
     height: 7rem;
     border-radius: 2rem;
+    width: 62%;
+
     // background-color: greenyellow;
   }
 
