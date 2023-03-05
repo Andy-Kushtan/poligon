@@ -147,15 +147,44 @@ balanceReload.addEventListener("click", function () {
 // }
 
 function rand(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
+  //   return Math.floor(Math.random() * (max - min)) + min;
+  return Math.ceil(Math.random() * (max - min)) + min;
 }
 
 function play() {
   //add sound if you want
   //var audio = new Audio('spin.mp3');
   //audio.play();
-  var offset = rand(55, 65 * 140 - 180) + 180;
-  document.getElementById("fillMeUpDaddy").style.left = -(offset - 180) + "px";
+
+  const arrWinNumbs = [
+    1, 14, 2, 13, 3, 12, 4, 0, 11, 5, 10, 6, 9, 7, 8, 1, 14, 2, 13, 3, 12, 4, 0,
+    11, 5, 10, 6, 9, 7, 8, 1, 14, 2, 13, 3, 12, 4, 0, 11, 5, 10, 6, 9, 7, 8, 1,
+    14, 2, 13, 3, 12, 4, 0, 11, 5, 10, 6, 9, 7, 8, 1, 14, 2, 13, 3, 12, 4, 0,
+    11, 5, 10, 6, 9, 7, 8, 1, 14, 2, 13, 3, 12, 4, 0, 11, 5, 10, 6, 9, 7, 8, 1,
+    14, 2, 13, 3, 12, 4, 0, 11, 5, 10, 6, 9, 7, 8, 1, 14, 2, 13, 3, 12, 4, 0,
+    11, 5, 10, 6, 9, 7, 8, 1, 14, 2, 13, 3, 12, 4, 0, 11, 5, 10, 6, 9, 7, 8, 1,
+    14, 2, 13, 3, 12, 4, 0, 11, 5, 10, 6, 9, 7, 8, 1, 14, 2, 13, 3, 12, 4, 0,
+    11, 5, 10, 6, 9, 7, 8, 1, 14, 2, 13, 3, 12, 4, 0, 11, 5, 10, 6, 9, 7, 8, 1,
+    14, 2, 13, 3, 12, 4, 0, 11, 5, 10, 6, 9, 7, 8,
+  ];
+
+  //   const offset = rand(75, 90 * 140); //90*140=12600
+  const offset = rand(3600, 10800);
+
+  document.getElementById("fillMeUpDaddy").style.left = -offset + "px";
+
+  //win number logic/ made this way because we start for number 1, but pointer line is locaited at number 6, so I add 450, which is the px from the beggining(left) and we get write shown win number;
+  //   const winnerNumber = offset + 560;
+  const winnerNumber = offset + 453;
+
+  const winNumber = arrWinNumbs[`${Math.floor(winnerNumber / 80)}`];
+  console.log(winNumber); //win number from array;
+
+  //   console.log(arrWinNumbs[3]);
+  //   console.log(offset);
+  //   console.log(arrWinNumbs.length);
+  //   console.log(winnerNumber);
+  //   console.log(winnerNumber / 80);
 
   //   let chosenPlayer = document.createElement("div");
   //   chosenPlayer.style.backgroundColor = bets[order[parseInt(offset / 140)]][1];
@@ -174,3 +203,8 @@ btn10.addEventListener("click", function (e) {
   //   init();
   play();
 });
+
+// 195 cubes
+// 1 cube 80px
+// 195*80= 15600
+// 15600/195 = 80 px per one cube;
