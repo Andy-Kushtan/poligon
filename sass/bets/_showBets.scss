@@ -178,7 +178,7 @@ $color-tertiary: #e15d51;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 55%;
+    width: 45%;
     margin-bottom: 0.5rem;
 
     &__img {
@@ -264,6 +264,13 @@ $color-tertiary: #e15d51;
   width: 85%;
 }
 
+.active-players__container-red {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+}
+
 .active-players {
   margin-top: 1rem;
   display: flex;
@@ -285,6 +292,11 @@ $color-tertiary: #e15d51;
     justify-content: flex-end;
 
     &__amount {
+      font-size: 1.4rem;
+      color: $color-tertiary;
+      margin-right: 1rem;
+    }
+    &__amount-red {
       font-size: 1.4rem;
       color: $color-tertiary;
       margin-right: 1rem;
