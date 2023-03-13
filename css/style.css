@@ -104,6 +104,17 @@
   background-color: #e15d51;
   font-size: 1.45rem; }
 
+.google__data {
+  display: none;
+  opacity: 0; }
+
+.google__img {
+  display: none;
+  opacity: 0;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem; }
+
 * {
   margin: 0;
   padding: 0;

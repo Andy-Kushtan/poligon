@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-signin-client_id" content="944389530671-bds8k4g99vbvov4l4c6cae2ebs8cb6f2.apps.googleusercontent.com">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="shortcut icon" type="image/png" href="/imgs/fav.png" />
 
@@ -84,7 +85,15 @@
             class="sound-off__img"
           />
         </div>
-        <a href="#" class="signIn">SIGN IN</a>
+        <!-- <a href="#" class="signIn">SIGN IN</a> -->
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <!-- <div class="signIn" data-onsuccess="onSignIn">SIGN IN</div> -->
+        <div class="google__data">
+
+          <img class="google__img" src="imgs/pep.jpg" alt="Profile img">
+          <span class="google__balance">1000</span>
+        </div>
+        
       </div>
     </div>
     <div class="background">
@@ -1122,5 +1131,13 @@
         <button class="btn__close-ok">OK</button>
     </div>
     <div class="overlay hidden"></div>
+
+    <!-- ///////////////////////// -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    
   </body>
 </html>
