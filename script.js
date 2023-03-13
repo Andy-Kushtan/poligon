@@ -6,7 +6,9 @@ const btnCloseModal = document.querySelector(".btn--close-modal");
 const btnCloseOk = document.querySelector(".btn__close-ok");
 const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
 const labelTimer = document.querySelector(".main-roullet__taimer__counter");
-const labelTaimerText = document.querySelector(".main-roullet__taimer__text");
+const labelTaimerText = document.querySelector(
+  ".main-roullet__taimer__rolling"
+);
 const balanceReload = document.querySelector(
   ".main-roullet__balance__balance__reload"
 );
@@ -236,6 +238,8 @@ function rand(min, max) {
 }
 const arrWinCircle = [3, 5, 9, 11, 0, 2, 4, 0, 13, 7];
 function play() {
+  document.getElementById("fillMeUpDaddy").style.transitionDuration = "10s";
+
   //add sound if you want
   //var audio = new Audio('spin.mp3');
   //audio.play();
@@ -269,7 +273,7 @@ function play() {
     arrWinCircle.pop();
     arrWinCircle.unshift(`${winNumber}`);
 
-    const style2 = function (el) {
+    const styleForWN = function (el) {
       if (arrWinCircle[el] < 8 && arrWinCircle[el] > 0) {
         return 2;
       } else if (arrWinCircle[el] > 7) {
@@ -280,70 +284,70 @@ function play() {
     winNumbersArr.innerHTML = "";
     const winNumberArrHTML = `
     <div
-    class="main-roullet__win-numbers__numbers__el main-roullet__win-numbers__numbers__el__${style2(
+    class="main-roullet__win-numbers__numbers__el main-roullet__win-numbers__numbers__el__${styleForWN(
       0
     )}"
   >
     ${arrWinCircle[0]}
   </div>
   <div
-    class="main-roullet__win-numbers__numbers__el main-roullet__win-numbers__numbers__el__${style2(
+    class="main-roullet__win-numbers__numbers__el main-roullet__win-numbers__numbers__el__${styleForWN(
       1
     )}"
   >
   ${arrWinCircle[1]}
   </div>
   <div
-    class="main-roullet__win-numbers__numbers__el main-roullet__win-numbers__numbers__el__${style2(
+    class="main-roullet__win-numbers__numbers__el main-roullet__win-numbers__numbers__el__${styleForWN(
       2
     )}"
   >
   ${arrWinCircle[2]}
   </div>
   <div
-    class="main-roullet__win-numbers__numbers__el main-roullet__win-numbers__numbers__el__${style2(
+    class="main-roullet__win-numbers__numbers__el main-roullet__win-numbers__numbers__el__${styleForWN(
       3
     )}"
   >
   ${arrWinCircle[3]}
   </div>
   <div
-    class="main-roullet__win-numbers__numbers__el main-roullet__win-numbers__numbers__el__${style2(
+    class="main-roullet__win-numbers__numbers__el main-roullet__win-numbers__numbers__el__${styleForWN(
       4
     )}"
   >
   ${arrWinCircle[4]}
   </div>
   <div
-    class="main-roullet__win-numbers__numbers__el main-roullet__win-numbers__numbers__el__${style2(
+    class="main-roullet__win-numbers__numbers__el main-roullet__win-numbers__numbers__el__${styleForWN(
       5
     )}"
   >
   ${arrWinCircle[5]}
   </div>
   <div
-    class="main-roullet__win-numbers__numbers__el main-roullet__win-numbers__numbers__el__${style2(
+    class="main-roullet__win-numbers__numbers__el main-roullet__win-numbers__numbers__el__${styleForWN(
       6
     )}"
   >
   ${arrWinCircle[6]}
   </div>
   <div
-    class="main-roullet__win-numbers__numbers__el main-roullet__win-numbers__numbers__el__${style2(
+    class="main-roullet__win-numbers__numbers__el main-roullet__win-numbers__numbers__el__${styleForWN(
       7
     )}"
   >
   ${arrWinCircle[7]}
   </div>
   <div
-    class="main-roullet__win-numbers__numbers__el main-roullet__win-numbers__numbers__el__${style2(
+    class="main-roullet__win-numbers__numbers__el main-roullet__win-numbers__numbers__el__${styleForWN(
       8
     )}"
   >
   ${arrWinCircle[8]}
   </div>
   <div
-    class="main-roullet__win-numbers__numbers__el main-roullet__win-numbers__numbers__el__${style2(
+    class="main-roullet__win-numbers__numbers__el main-roullet__win-numbers__numbers__el__${styleForWN(
       9
     )}"
   >
@@ -352,7 +356,8 @@ function play() {
     `;
     winNumbersArr.insertAdjacentHTML("afterbegin", winNumberArrHTML);
   };
-  addWinNumber();
+
+  setTimeout(addWinNumber, 11000);
   /////////////
 
   //   console.log(arrWinNumbs[3]);
@@ -374,26 +379,41 @@ function play() {
   //   }, 5500);
 }
 
+// btn10.addEventListener("click", function (e) {
+//   //   init();
+//   setTimeout(play, 25000);
+//   startProgresBarTimer();
+// });
 btn10.addEventListener("click", function (e) {
-  //   init();
   play();
 });
 
 //////////////Timer
-const startLogOutTimer = function () {
+const startProgresBarTimer = function () {
+  ///////returt position of rullete to the beggining
+  const returnOfcet = function () {
+    document.getElementById("fillMeUpDaddy").style.left = "0px";
+    document.getElementById("fillMeUpDaddy").style.transitionDuration = "0s";
+  };
+  returnOfcet();
+
+  labelTaimerText.textContent = "Rolling in";
   const tick = function () {
     const sec = String(time).padStart(2, 0);
     labelProgresBar.classList.remove("opacity");
     // In each call, print the remaining time to UI
+
     labelTimer.textContent = `${sec}`;
 
     // When 0 seconds, stop timer and log out user
     if (time === 0) {
       clearInterval(timer);
-      //   labelWelcome.textContent = "Log in to get started";
       //   containerApp.style.opacity = 0;
       labelTaimerText.textContent = "Rolling...";
+      labelTimer.textContent = "";
       labelProgresBar.classList.add("opacity");
+
+      play();
     }
 
     // Decrease 1s
@@ -401,7 +421,7 @@ const startLogOutTimer = function () {
   };
 
   // Set time to 25 seconds
-  let time = 25;
+  let time = 15;
 
   // Call the timer every second
   tick();
@@ -410,6 +430,5 @@ const startLogOutTimer = function () {
   return timer;
 };
 
-// startLogOutTimer();
-
-// when i will add spinning roullet => need to add startLogOutTimer(); when the spin is over;
+// startProgresBarTimer();
+// setInterval(startProgresBarTimer, 30000);
