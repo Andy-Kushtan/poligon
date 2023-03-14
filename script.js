@@ -108,6 +108,7 @@ const RedAPBetAmount = document.querySelector(
 const winNumbersArr = document.querySelector(
   ".main-roullet__win-numbers__numbers"
 );
+const googleInfo = document.querySelector(".display");
 
 //////////////////chat rules poap
 const openModal = function (e) {
@@ -436,17 +437,26 @@ const startProgresBarTimer = function () {
 ///////////////google sign in
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
-  // $("#id of html element (he use name)").text(profile.getName());
-  $("image").attr("src", profile.getImageUrl());
-  $(".google__data").css("display", "flex");
-  $(".g-signin2").css("display", "none");
+
+  // // $("#id of html element (he use name)").text(profile.getName());
+  // $("image").attr("src", profile.getImageUrl());
+  // $(".google__data").css("display", "flex");
+  // $(".g-signin2").css("display", "none");
+  googleInfo.classList.remove("display");
+  googleInfo.innerHTML = "";
+  const googleHTML = `
+          <img class="google__img" src="${profile.getImageUrl()}" alt="Profile img">
+          <span class="google__balance">1500</span>
+  `;
+  googleInfo.insertAdjacentHTML("afterbegin", googleHTML);
 }
 
 function signOut() {
   var auth2 = gapi.auth2.getAuthInstance();
   auth2.signOut().then(function () {
     console.log("User signed out.");
-    $(".g-signin2").css("display", "flex");
-    $(".google__data").css("display", "none");
+    // $(".g-signin2").css("display", "flex");
+    // $(".google__data").css("display", "none");
+    googleInfo.classList.add("display");
   });
 }
