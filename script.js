@@ -435,21 +435,21 @@ const startProgresBarTimer = function () {
 // setInterval(startProgresBarTimer, 30000);
 
 ///////////////google sign in
-function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
+// function onSignIn(googleUser) {
+//   var profile = googleUser.getBasicProfile();
 
-  // // $("#id of html element (he use name)").text(profile.getName());
-  // $("image").attr("src", profile.getImageUrl());
-  // $(".google__data").css("display", "flex");
-  // $(".g-signin2").css("display", "none");
-  googleInfo.classList.remove("display");
-  googleInfo.innerHTML = "";
-  const googleHTML = `
-          <img class="google__img" src="${profile.getImageUrl()}" alt="Profile img">
-          <span class="google__balance">1500</span>
-  `;
-  googleInfo.insertAdjacentHTML("afterbegin", googleHTML);
-}
+//   // // $("#id of html element (he use name)").text(profile.getName());
+//   // $("image").attr("src", profile.getImageUrl());
+//   // $(".google__data").css("display", "flex");
+//   // $(".g-signin2").css("display", "none");
+//   googleInfo.classList.remove("display");
+//   googleInfo.innerHTML = "";
+//   const googleHTML = `
+//           <img class="google__img" src="${profile.getImageUrl()}" alt="Profile img">
+//           <span class="google__balance">1500</span>
+//   `;
+//   googleInfo.insertAdjacentHTML("afterbegin", googleHTML);
+// }
 
 function signOut() {
   var auth2 = gapi.auth2.getAuthInstance();
