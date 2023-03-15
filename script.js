@@ -493,8 +493,8 @@ const startProgresBarTimer = function () {
   return timer;
 };
 
-// startProgresBarTimer();
-// setInterval(startProgresBarTimer, 30000);
+startProgresBarTimer();
+setInterval(startProgresBarTimer, 30000);
 
 ///////////////google sign in
 // function onSignIn(googleUser) {
