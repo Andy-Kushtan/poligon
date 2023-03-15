@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.21.3",
+    "@babel/node": "^7.20.7",
     "node-sass": "^8.0.0"
   }
 }

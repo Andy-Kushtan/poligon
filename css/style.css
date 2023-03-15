@@ -104,10 +104,6 @@
   background-color: #e15d51;
   font-size: 1.45rem; }
 
-.google__data {
-  display: none;
-  opacity: 0; }
-
 .google__img {
   border-radius: 50%;
   width: 4rem;
@@ -208,6 +204,9 @@ body {
 
 .opacity {
   opacity: 0; }
+
+.display {
+  display: none; }
 
 .sidebar {
   display: flex;
@@ -797,6 +796,18 @@ body {
   align-items: center;
   width: 85%; }
 
+.active-players__container-zero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%; }
+
+.active-players__container-black {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%; }
+
 .active-players {
   margin-top: 1rem;
   display: flex;
@@ -818,6 +829,14 @@ body {
       color: #e15d51;
       margin-right: 1rem; }
     .active-players__betamount__amount-red {
+      font-size: 1.4rem;
+      color: #e15d51;
+      margin-right: 1rem; }
+    .active-players__betamount__amount-zero {
+      font-size: 1.4rem;
+      color: #e15d51;
+      margin-right: 1rem; }
+    .active-players__betamount__amount-black {
       font-size: 1.4rem;
       color: #e15d51;
       margin-right: 1rem; }

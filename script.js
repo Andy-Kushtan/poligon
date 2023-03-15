@@ -102,6 +102,15 @@ const totalPlayersBlack = document.querySelector(
 const RedActivePlayers = document.querySelector(
   ".active-players__container-red"
 );
+const ZeroActivePlayers = document.querySelector(
+  ".active-players__container-zero"
+);
+
+const BlackActivePlayers = document.querySelector(
+  ".active-players__container-black"
+);
+
+const RedAPBetAmountNick = document.querySelector(".active-players__betamount");
 const RedAPBetAmount = document.querySelector(
   ".active-players__betamount__amount-red"
 );
@@ -167,26 +176,33 @@ btnMAX.addEventListener("click", function () {
   inputBetAmount.value = balance.textContent;
 });
 
-let clickCounterActivePlayers = 0;
 btnAllRed.addEventListener("click", function () {
+  let clickCounterActivePlayers = 0;
   if (
-    inputBetAmount.value > 0 &&
+    clickCounterActivePlayers === 0 &&
+    inputBetAmount.value > 1 &&
+    +balance.textContent >= inputBetAmount.value &&
+    counterRed.textContent < 1
+  ) {
+    clickCounterActivePlayers++;
+    totalPlayersRed.textContent = +totalPlayersRed.textContent + 1;
+  }
+
+  if (
+    inputBetAmount.value > 1 &&
     +balance.textContent >= inputBetAmount.value
   ) {
     counterRed.textContent = +counterRed.textContent + +inputBetAmount.value;
     totalBetAmountRed.textContent =
       +totalBetAmountRed.textContent + +inputBetAmount.value;
-
-    // RedAPBetAmount.textContent = counterRed.textContent;
+    balance.textContent = +balance.textContent - inputBetAmount.value;
   }
 
   if (
-    inputBetAmount.value > 0 &&
+    inputBetAmount.value > 1 &&
     +balance.textContent >= inputBetAmount.value &&
-    clickCounterActivePlayers === 0
+    counterRed.textContent > 1
   ) {
-    clickCounterActivePlayers++;
-    totalPlayersRed.textContent = +totalPlayersRed.textContent + 1;
     RedActivePlayers.innerHTML = "";
     const html = `
                     <div class="active-players">
@@ -208,27 +224,87 @@ btnAllRed.addEventListener("click", function () {
 // console.log(clickCounterActivePlayers);
 
 bntZero.addEventListener("click", function () {
+  let clickCounterActivePlayers = 0;
   if (
-    inputBetAmount.value > 0 &&
+    clickCounterActivePlayers === 0 &&
+    inputBetAmount.value > 1 &&
+    +balance.textContent >= inputBetAmount.value &&
+    counterZero.textContent < 1
+  ) {
+    clickCounterActivePlayers++;
+    totalPlayersZero.textContent = +totalPlayersZero.textContent + 1;
+  }
+
+  if (
+    inputBetAmount.value > 1 &&
     +balance.textContent >= inputBetAmount.value
   ) {
     counterZero.textContent = +counterZero.textContent + +inputBetAmount.value;
     totalBetAmountZero.textContent =
       +totalBetAmountZero.textContent + +inputBetAmount.value;
-    // totalPlayersRed.textContent = +totalPlayersRed.textContent + 1; need to think how to do;
+    balance.textContent = +balance.textContent - inputBetAmount.value;
+  }
+
+  if (
+    inputBetAmount.value > 1 &&
+    +balance.textContent >= inputBetAmount.value &&
+    counterZero.textContent > 1
+  ) {
+    ZeroActivePlayers.innerHTML = "";
+    const htmlZero = `
+                    <div class="active-players">
+                      <img class="active-players__avatar" src="imgs/pep.jpg" alt="player">
+                      <span class="active-players__nick">nick</span>
+                    </div>
+                    <div class="active-players__betamount">
+                      <span class="active-players__betamount__amount-zero">${counterZero.textContent}</span>
+                      <span class="active-players__betamount__color-green"></span>
+                    </div> 
+        `;
+    ZeroActivePlayers.insertAdjacentHTML("afterbegin", htmlZero);
   }
 });
 
 bntAllBlack.addEventListener("click", function () {
+  let clickCounterActivePlayers = 0;
   if (
-    inputBetAmount.value > 0 &&
+    clickCounterActivePlayers === 0 &&
+    inputBetAmount.value > 1 &&
+    +balance.textContent >= inputBetAmount.value &&
+    counterBlack.textContent < 1
+  ) {
+    clickCounterActivePlayers++;
+    totalPlayersBlack.textContent = +totalPlayersBlack.textContent + 1;
+  }
+
+  if (
+    inputBetAmount.value > 1 &&
     +balance.textContent >= inputBetAmount.value
   ) {
     counterBlack.textContent =
       +counterBlack.textContent + +inputBetAmount.value;
     totalBetAmountBlack.textContent =
       +totalBetAmountBlack.textContent + +inputBetAmount.value;
-    // totalPlayersRed.textContent = +totalPlayersRed.textContent + 1; need to think how to do;
+    balance.textContent = +balance.textContent - inputBetAmount.value;
+  }
+
+  if (
+    inputBetAmount.value > 1 &&
+    +balance.textContent >= inputBetAmount.value &&
+    counterBlack.textContent > 1
+  ) {
+    BlackActivePlayers.innerHTML = "";
+    const html = `
+                    <div class="active-players">
+                      <img class="active-players__avatar" src="imgs/pep.jpg" alt="player">
+                      <span class="active-players__nick">nick</span>
+                    </div>
+                    <div class="active-players__betamount">
+                      <span class="active-players__betamount__amount-black">${counterBlack.textContent}</span>
+                      <span class="active-players__betamount__color-black"></span>
+                    </div> 
+        `;
+    BlackActivePlayers.insertAdjacentHTML("afterbegin", html);
   }
 });
 
@@ -360,24 +436,6 @@ function play() {
 
   setTimeout(addWinNumber, 11000);
   /////////////
-
-  //   console.log(arrWinNumbs[3]);
-  //   console.log(offset);
-  //   console.log(arrWinNumbs.length);
-  //   console.log(winnerNumber);
-  //   console.log(winnerNumber / 80);
-
-  //   let chosenPlayer = document.createElement("div");
-  //   chosenPlayer.style.backgroundColor = bets[order[parseInt(offset / 140)]][1];
-  //   chosenPlayer.innerHTML = bets[order[parseInt(offset / 140)]][0];
-  //   setTimeout(function () {
-  //     // document.getElementById("winners").appendChild(chosenPlayer);
-  //     document.getElementById("fillMeUpDaddy").style.transitionDuration = "0s";
-  //     document.getElementById("fillMeUpDaddy").style.left = "0px";
-  //     setTimeout(function () {
-  //       document.getElementById("fillMeUpDaddy").style.transitionDuration = "5s";
-  //     }, 50);
-  //   }, 5500);
 }
 
 // btn10.addEventListener("click", function (e) {
@@ -413,8 +471,12 @@ const startProgresBarTimer = function () {
       labelTaimerText.textContent = "Rolling...";
       labelTimer.textContent = "";
       labelProgresBar.classList.add("opacity");
-
+      btnAllRed.disabled = true;
       play();
+    }
+
+    if (time > 0) {
+      btnAllRed.disabled = false;
     }
 
     // Decrease 1s
@@ -450,13 +512,13 @@ const startProgresBarTimer = function () {
 //   `;
 //   googleInfo.insertAdjacentHTML("afterbegin", googleHTML);
 // }
-function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
-  console.log("ID: " + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log("Name: " + profile.getName());
-  console.log("Image URL: " + profile.getImageUrl());
-  console.log("Email: " + profile.getEmail()); // This is null if the 'email' scope is not present.
-}
+// function onSignIn(googleUser) {
+//   var profile = googleUser.getBasicProfile();
+//   console.log("ID: " + profile.getId()); // Do not send to your backend! Use an ID token instead.
+//   console.log("Name: " + profile.getName());
+//   console.log("Image URL: " + profile.getImageUrl());
+//   console.log("Email: " + profile.getEmail()); // This is null if the 'email' scope is not present.
+// }
 
 // function signOut() {
 //   var auth2 = gapi.auth2.getAuthInstance();

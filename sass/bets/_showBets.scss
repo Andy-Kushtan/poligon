@@ -270,6 +270,18 @@ $color-tertiary: #e15d51;
   align-items: center;
   width: 85%;
 }
+.active-players__container-zero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+}
+.active-players__container-black {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+}
 
 .active-players {
   margin-top: 1rem;
@@ -297,6 +309,16 @@ $color-tertiary: #e15d51;
       margin-right: 1rem;
     }
     &__amount-red {
+      font-size: 1.4rem;
+      color: $color-tertiary;
+      margin-right: 1rem;
+    }
+    &__amount-zero {
+      font-size: 1.4rem;
+      color: $color-tertiary;
+      margin-right: 1rem;
+    }
+    &__amount-black {
       font-size: 1.4rem;
       color: $color-tertiary;
       margin-right: 1rem;
