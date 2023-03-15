@@ -208,6 +208,9 @@ body {
 .display {
   display: none; }
 
+.decrice-opacity {
+  opacity: 0.5; }
+
 .sidebar {
   display: flex;
   flex-direction: column;

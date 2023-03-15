@@ -178,6 +178,7 @@ btnMAX.addEventListener("click", function () {
 
 btnAllRed.addEventListener("click", function () {
   let clickCounterActivePlayers = 0;
+  RedActivePlayers.classList.remove("decrice-opacity");
   if (
     clickCounterActivePlayers === 0 &&
     inputBetAmount.value > 1 &&
@@ -225,6 +226,7 @@ btnAllRed.addEventListener("click", function () {
 
 bntZero.addEventListener("click", function () {
   let clickCounterActivePlayers = 0;
+  ZeroActivePlayers.classList.remove("decrice-opacity");
   if (
     clickCounterActivePlayers === 0 &&
     inputBetAmount.value > 1 &&
@@ -267,6 +269,7 @@ bntZero.addEventListener("click", function () {
 
 bntAllBlack.addEventListener("click", function () {
   let clickCounterActivePlayers = 0;
+  BlackActivePlayers.classList.remove("decrice-opacity");
   if (
     clickCounterActivePlayers === 0 &&
     inputBetAmount.value > 1 &&
@@ -432,23 +435,78 @@ function play() {
   </div>
     `;
     winNumbersArr.insertAdjacentHTML("afterbegin", winNumberArrHTML);
+
+    ////////////add balance to winners and display resalts
+    const displayResalts = function () {
+      if (winNumber >= 1 && winNumber <= 7) {
+        balance.textContent =
+          +balance.textContent + +counterRed.textContent * 2;
+
+        counterRed.textContent = "+" + +counterRed.textContent * 2;
+
+        totalBetAmountRed.textContent =
+          "+" + +totalBetAmountRed.textContent * 2;
+
+        ZeroActivePlayers.classList.add("decrice-opacity");
+        BlackActivePlayers.classList.add("decrice-opacity");
+      }
+
+      if (winNumber === 0) {
+        balance.textContent =
+          +balance.textContent + +counterZero.textContent * 14;
+
+        counterZero.textContent = "+" + +counterZero.textContent * 14;
+        totalBetAmountZero.textContent =
+          "+" + +totalBetAmountZero.textContent * 14;
+
+        RedActivePlayers.classList.add("decrice-opacity");
+        BlackActivePlayers.classList.add("decrice-opacity");
+      }
+
+      if (winNumber >= 8 && winNumber <= 14) {
+        balance.textContent =
+          +balance.textContent + +counterBlack.textContent * 2;
+
+        counterBlack.textContent = "+" + +counterBlack.textContent * 2;
+        totalBetAmountBlack.textContent =
+          "+" + +totalBetAmountBlack.textContent * 2;
+
+        ZeroActivePlayers.classList.add("decrice-opacity");
+        RedActivePlayers.classList.add("decrice-opacity");
+      }
+    };
+    displayResalts();
   };
 
   setTimeout(addWinNumber, 11000);
   /////////////
 }
 
-// btn10.addEventListener("click", function (e) {
-//   //   init();
-//   setTimeout(play, 25000);
-//   startProgresBarTimer();
-// });
+const clear = function () {
+  RedActivePlayers.innerHTML = "";
+  ZeroActivePlayers.innerHTML = "";
+  BlackActivePlayers.innerHTML = "";
+
+  counterRed.textContent = 0;
+  counterZero.textContent = 0;
+  counterBlack.textContent = 0;
+
+  totalBetAmountRed.textContent = 0;
+  totalBetAmountZero.textContent = 0;
+  totalBetAmountBlack.textContent = 0;
+
+  totalPlayersRed.textContent = 0;
+  totalPlayersZero.textContent = 0;
+  totalPlayersBlack.textContent = 0;
+};
+
 btn10.addEventListener("click", function (e) {
   play();
 });
 
 //////////////Timer
 const startProgresBarTimer = function () {
+  clear();
   ///////returt position of rullete to the beggining
   const returnOfcet = function () {
     document.getElementById("fillMeUpDaddy").style.left = "0px";
@@ -472,11 +530,15 @@ const startProgresBarTimer = function () {
       labelTimer.textContent = "";
       labelProgresBar.classList.add("opacity");
       btnAllRed.disabled = true;
+      bntZero.disabled = true;
+      bntAllBlack.disabled = true;
       play();
     }
 
     if (time > 0) {
       btnAllRed.disabled = false;
+      bntZero.disabled = false;
+      bntAllBlack.disabled = false;
     }
 
     // Decrease 1s
@@ -493,8 +555,8 @@ const startProgresBarTimer = function () {
   return timer;
 };
 
-startProgresBarTimer();
-setInterval(startProgresBarTimer, 30000);
+// startProgresBarTimer();
+// setInterval(startProgresBarTimer, 30000);
 
 ///////////////google sign in
 // function onSignIn(googleUser) {
