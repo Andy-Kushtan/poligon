@@ -396,6 +396,7 @@ body {
     position: relative;
     margin-left: 2rem; }
     .main-roullet__taimer__progres-bar {
+      animation: timer 30s ease-in infinite;
       background-color: #e15d51;
       width: 100%;
       height: 5rem;
