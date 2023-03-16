@@ -80,9 +80,14 @@
         </div>
         <div class="sound-off nav-social__icons">
           <img
-            src="imgs/icons8-alarm-alert-message-bell-icon-sign-for-notification-48.png"
+            src="imgs/soundoff.png"
             alt=""
             class="sound-off__img"
+          />
+          <img
+            src="imgs/soundon.png"
+            alt=""
+            class="sound-on__img display"
           />
         </div>
         <a href="#" class="signIn">SIGN IN</a>
@@ -935,6 +940,7 @@
           <div class="main-roullet__win-numbers__jackpot">
             <img class="main-roullet__win-numbers__jackpot__cup" src="imgs/icons8-cup-60 (1).png" alt="cup"> JACKPOT</div>
         </div>
+        <!-- <div></div> -->
         <div class="main-roullet__balance">
           <div class="main-roullet__balance__balance">
             Balance
@@ -966,154 +972,157 @@
 
       <!-- Interface of players bets -->
       <div class="display-interface background2">
-        <div class="display-interface__varaity-bet">
-          <div class="display-interface__all-bet">
-            <button class="display-interface__all-bet__coulor">All Red</button>
-          
-            <div class="display-interface__all-bets">
-              <button class="display-interface__all-bets__numbers-red display-interface__all-bets__numbers-red-1">1</button>
-              <button class="display-interface__all-bets__numbers-red display-interface__all-bets__numbers-red-2">2</button>
-              <button class="display-interface__all-bets__numbers-red display-interface__all-bets__numbers-red-3">3</button>
-              <button class="display-interface__all-bets__numbers-red display-interface__all-bets__numbers-red-4">4</button>
-              <button class="display-interface__all-bets__numbers-red display-interface__all-bets__numbers-red-5">5</button>
-              <button class="display-interface__all-bets__numbers-red display-interface__all-bets__numbers-red-6">6</button>
-              <button class="display-interface__all-bets__numbers-red display-interface__all-bets__numbers-red-7">7</button>
-            </div>
-          </div>  
-
-          <div class="display-interface__zero-box">
-            <button class="display-interface__zero-box__zero">0</button>
-          </div>  
-
-          <div class="display-interface__all-bet-black">
-            <button class="display-interface__all-bet__coulor-black">All Black</button>
-          
-            <div class="display-interface__all-bets">
-              <button class="display-interface__all-bets__numbers-black display-interface__all-bets__numbers-black-8">8</button>
-              <button class="display-interface__all-bets__numbers-black display-interface__all-bets__numbers-black-9">9</button>
-              <button class="display-interface__all-bets__numbers-black display-interface__all-bets__numbers-black-10">10</button>
-              <button class="display-interface__all-bets__numbers-black display-interface__all-bets__numbers-black-11">11</button>
-              <button class="display-interface__all-bets__numbers-black display-interface__all-bets__numbers-black-12">12</button>
-              <button class="display-interface__all-bets__numbers-black display-interface__all-bets__numbers-black-13">13</button>
-              <button class="display-interface__all-bets__numbers-black display-interface__all-bets__numbers-black-14">14</button>
-            </div>
-          </div>  
-        </div>  
         
-
-        <div class="counter">
-          <div class="counter__red counter__style">0</div>
-          <div class="counter__zero counter__style">0</div>
-          <div class="counter__black counter__style">0</div>
-        </div>
-
-
-        <div class="display-players">
-          <div class="display-players__red">
-            <div class="display-players__container">
-              <div class="display-players__players">
-                <img class="display-players__players__img" src="imgs/icons8-customer-100.png" alt="players"> 
-                <span class="display-players__players__number display-players__players__number-red">0</span>
-              </div>
-              <div class="display-players__totalbet">
-                <p class="display-players__totalbet__text">Total Bet:</p>
-                <span class="display-players__totalbet__amount display-players__totalbet__amount-red">0</span>
-              </div>
-            </div>
-              <div class="active-players__container-red">
-                <!-- <div class="active-players">
-                  <img class="active-players__avatar" src="imgs/pep.jpg" alt="player">
-                  <span class="active-players__nick">nick</span>
-                </div>
-                <div class="active-players__betamount">
-                  <span class="active-players__betamount__amount-red">190</span>
-                  <span class="active-players__betamount__color-red"></span>
-                </div>  -->
-              </div>
-
-<!-- 
-              <div class="active-players__container-zero">
-                <div class="active-players">
-                  <img class="active-players__avatar" src="imgs/pep.jpg" alt="player">
-                  <span class="active-players__nick">nick</span>
-                </div>
-                <div class="active-players__betamount">
-                  <span class="active-players__betamount__amount">190</span>
-                  <span class="active-players__betamount__color-green"></span>
-                </div> 
-              </div> -->
-              <!-- <div class="active-players__container-black">
-                <div class="active-players">
-                  <img class="active-players__avatar" src="imgs/pep.jpg" alt="player">
-                  <span class="active-players__nick">nick</span>
-                </div>
-                <div class="active-players__betamount">
-                  <span class="active-players__betamount__amount">190</span>
-                  <span class="active-players__betamount__color-black"></span>
-                </div> 
-              </div> -->
-
-
-          </div>
-          
-          <div class="display-players__zero">
-            <div class="display-players__container">
-              <div class="display-players__players">
-                <img class="display-players__players__img" src="imgs/icons8-customer-100.png" alt="players"> 
-                <span class="display-players__players__number display-players__players__number-zero">0</span>
-              </div>
-              <div class="display-players__totalbet">
-                <p class="display-players__totalbet__text">Total Bet:</p>
-                <span class="display-players__totalbet__amount display-players__totalbet__amount-zero">0</span>
-              </div>
-            </div>
-
-            <!-- <div class="active-players__container">
-                <div class="active-players">
-                  <img class="active-players__avatar" src="imgs/pep.jpg" alt="player">
-                  <span class="active-players__nick">nick</span>
-                </div>
-                <div class="active-players__betamount">
-                  <span class="active-players__betamount__amount">190</span>
-                  <span class="active-players__betamount__color-green"></span>
-                </div> 
-            </div>   -->
-            <div class="active-players__container-zero">
-              <!-- <div class="active-players">
-                <img class="active-players__avatar" src="imgs/pep.jpg" alt="player">
-                <span class="active-players__nick">nick</span>
-              </div>
-              <div class="active-players__betamount">
-                <span class="active-players__betamount__amount">190</span>
-                <span class="active-players__betamount__color-green"></span>
-              </div>  -->
-            </div>
-              
-          </div>
-
-          <div class="display-players__black">
-            <div class="display-players__container">
-              <div class="display-players__players">
-                <img class="display-players__players__img" src="imgs/icons8-customer-100.png" alt="players"> 
-                <span class="display-players__players__number display-players__players__number-black">0</span>
-              </div>
-              <div class="display-players__totalbet">
-                <p class="display-players__totalbet__text">Total Bet:</p>
-                <span class="display-players__totalbet__amount display-players__totalbet__amount-black">0</span>
+          <div class="display-interface__varaity-bet">
+            <div class="display-interface__all-bet">
+              <button class="display-interface__all-bet__coulor">All Red</button>
+            
+              <div class="display-interface__all-bets">
+                <button class="display-interface__all-bets__numbers-red display-interface__all-bets__numbers-red-1">1</button>
+                <button class="display-interface__all-bets__numbers-red display-interface__all-bets__numbers-red-2">2</button>
+                <button class="display-interface__all-bets__numbers-red display-interface__all-bets__numbers-red-3">3</button>
+                <button class="display-interface__all-bets__numbers-red display-interface__all-bets__numbers-red-4">4</button>
+                <button class="display-interface__all-bets__numbers-red display-interface__all-bets__numbers-red-5">5</button>
+                <button class="display-interface__all-bets__numbers-red display-interface__all-bets__numbers-red-6">6</button>
+                <button class="display-interface__all-bets__numbers-red display-interface__all-bets__numbers-red-7">7</button>
               </div>
             </div>  
+
+            <div class="display-interface__zero-box">
+              <button class="display-interface__zero-box__zero">0</button>
+            </div>  
+
+            <div class="display-interface__all-bet-black">
+              <button class="display-interface__all-bet__coulor-black">All Black</button>
             
-            <div class="active-players__container-black">
+              <div class="display-interface__all-bets">
+                <button class="display-interface__all-bets__numbers-black display-interface__all-bets__numbers-black-8">8</button>
+                <button class="display-interface__all-bets__numbers-black display-interface__all-bets__numbers-black-9">9</button>
+                <button class="display-interface__all-bets__numbers-black display-interface__all-bets__numbers-black-10">10</button>
+                <button class="display-interface__all-bets__numbers-black display-interface__all-bets__numbers-black-11">11</button>
+                <button class="display-interface__all-bets__numbers-black display-interface__all-bets__numbers-black-12">12</button>
+                <button class="display-interface__all-bets__numbers-black display-interface__all-bets__numbers-black-13">13</button>
+                <button class="display-interface__all-bets__numbers-black display-interface__all-bets__numbers-black-14">14</button>
+              </div>
+            </div>  
+          </div>  
+          
+
+          <div class="counter">
+            <div class="counter__red counter__style">0</div>
+            <div class="counter__zero counter__style">0</div>
+            <div class="counter__black counter__style">0</div>
+          </div>
+
+
+          <div class="display-players">
+            <div class="display-players__red">
+              <div class="display-players__container">
+                <div class="display-players__players">
+                  <img class="display-players__players__img" src="imgs/icons8-customer-100.png" alt="players"> 
+                  <span class="display-players__players__number display-players__players__number-red">0</span>
+                </div>
+                <div class="display-players__totalbet">
+                  <p class="display-players__totalbet__text">Total Bet:</p>
+                  <span class="display-players__totalbet__amount display-players__totalbet__amount-red">0</span>
+                </div>
+              </div>
+                <div class="active-players__container-red">
+                  <!-- <div class="active-players">
+                    <img class="active-players__avatar" src="imgs/pep.jpg" alt="player">
+                    <span class="active-players__nick">nick</span>
+                  </div>
+                  <div class="active-players__betamount">
+                    <span class="active-players__betamount__amount-red">190</span>
+                    <span class="active-players__betamount__color-red"></span>
+                  </div>  -->
+                </div>
+
+  <!-- 
+                <div class="active-players__container-zero">
+                  <div class="active-players">
+                    <img class="active-players__avatar" src="imgs/pep.jpg" alt="player">
+                    <span class="active-players__nick">nick</span>
+                  </div>
+                  <div class="active-players__betamount">
+                    <span class="active-players__betamount__amount">190</span>
+                    <span class="active-players__betamount__color-green"></span>
+                  </div> 
+                </div> -->
+                <!-- <div class="active-players__container-black">
+                  <div class="active-players">
+                    <img class="active-players__avatar" src="imgs/pep.jpg" alt="player">
+                    <span class="active-players__nick">nick</span>
+                  </div>
+                  <div class="active-players__betamount">
+                    <span class="active-players__betamount__amount">190</span>
+                    <span class="active-players__betamount__color-black"></span>
+                  </div> 
+                </div> -->
+
+
+            </div>
+            
+            <div class="display-players__zero">
+              <div class="display-players__container">
+                <div class="display-players__players">
+                  <img class="display-players__players__img" src="imgs/icons8-customer-100.png" alt="players"> 
+                  <span class="display-players__players__number display-players__players__number-zero">0</span>
+                </div>
+                <div class="display-players__totalbet">
+                  <p class="display-players__totalbet__text">Total Bet:</p>
+                  <span class="display-players__totalbet__amount display-players__totalbet__amount-zero">0</span>
+                </div>
+              </div>
+
+              <!-- <div class="active-players__container">
+                  <div class="active-players">
+                    <img class="active-players__avatar" src="imgs/pep.jpg" alt="player">
+                    <span class="active-players__nick">nick</span>
+                  </div>
+                  <div class="active-players__betamount">
+                    <span class="active-players__betamount__amount">190</span>
+                    <span class="active-players__betamount__color-green"></span>
+                  </div> 
+              </div>   -->
+              <div class="active-players__container-zero">
                 <!-- <div class="active-players">
                   <img class="active-players__avatar" src="imgs/pep.jpg" alt="player">
                   <span class="active-players__nick">nick</span>
                 </div>
                 <div class="active-players__betamount">
                   <span class="active-players__betamount__amount">190</span>
-                  <span class="active-players__betamount__color-black"></span>
+                  <span class="active-players__betamount__color-green"></span>
                 </div>  -->
+              </div>
+                
             </div>
-          </div>
+
+            <div class="display-players__black">
+              <div class="display-players__container">
+                <div class="display-players__players">
+                  <img class="display-players__players__img" src="imgs/icons8-customer-100.png" alt="players"> 
+                  <span class="display-players__players__number display-players__players__number-black">0</span>
+                </div>
+                <div class="display-players__totalbet">
+                  <p class="display-players__totalbet__text">Total Bet:</p>
+                  <span class="display-players__totalbet__amount display-players__totalbet__amount-black">0</span>
+                </div>
+              </div>  
+              
+              <div class="active-players__container-black">
+                  <!-- <div class="active-players">
+                    <img class="active-players__avatar" src="imgs/pep.jpg" alt="player">
+                    <span class="active-players__nick">nick</span>
+                  </div>
+                  <div class="active-players__betamount">
+                    <span class="active-players__betamount__amount">190</span>
+                    <span class="active-players__betamount__color-black"></span>
+                  </div>  -->
+              </div>
+            </div>
+          
+
         </div>
         
       </div>

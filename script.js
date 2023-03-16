@@ -119,6 +119,26 @@ const winNumbersArr = document.querySelector(
 );
 const googleInfo = document.querySelector(".display");
 
+const btnsoundOFF = document.querySelector(".sound-off__img");
+const btnsoundON = document.querySelector(".sound-on__img");
+
+////////////////////add music
+const audio = new Audio("music/papich.mp3");
+const soundON = function () {
+  audio.play();
+  btnsoundOFF.classList.add("display");
+  btnsoundON.classList.remove("display");
+};
+const soundOFF = function () {
+  audio.pause();
+  audio.currentTime = 0;
+  btnsoundON.classList.add("display");
+  btnsoundOFF.classList.remove("display");
+};
+
+btnsoundOFF.addEventListener("click", soundON);
+btnsoundON.addEventListener("click", soundOFF);
+
 //////////////////chat rules poap
 const openModal = function (e) {
   e.preventDefault();
@@ -555,8 +575,8 @@ const startProgresBarTimer = function () {
   return timer;
 };
 
-startProgresBarTimer();
-setInterval(startProgresBarTimer, 30000);
+// startProgresBarTimer();
+// setInterval(startProgresBarTimer, 30000);
 
 ///////////////google sign in
 // function onSignIn(googleUser) {
