@@ -520,9 +520,9 @@ const clear = function () {
   totalPlayersBlack.textContent = 0;
 };
 
-btn10.addEventListener("click", function (e) {
-  play();
-});
+// btn10.addEventListener("click", function (e) {
+//   play();
+// });
 
 //////////////Timer
 const startProgresBarTimer = function () {
@@ -575,8 +575,8 @@ const startProgresBarTimer = function () {
   return timer;
 };
 
-// startProgresBarTimer();
-// setInterval(startProgresBarTimer, 30000);
+startProgresBarTimer();
+setInterval(startProgresBarTimer, 30000);
 
 ///////////////google sign in
 // function onSignIn(googleUser) {

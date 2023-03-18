@@ -120,6 +120,29 @@ body {
   opacity: 0.5;
 }
 
+@media screen and (min-width: 2100px) {
+  html {
+    font-size: 100%;
+  }
+}
+@media screen and (min-width: 1900px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  html {
+    font-size: 70%;
+  }
+}
+
 @media screen and (max-width: 1310px) {
   html {
     font-size: 60%;
